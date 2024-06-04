@@ -1,12 +1,12 @@
 package com.atuka;
 
 public class MortgageCalculator {
-    final static int MONTHS_IN_YEAR = 12;
-    final static int PERCENTAGE = 100;
+    private final static int MONTHS_IN_YEAR = 12;
+    private final static int PERCENTAGE     = 100;
 
-    private int principal;
-    private float annualInterest;
-    private short years;
+    private final int   principal;
+    private final float annualInterest;
+    private final short years;
 
 
     public MortgageCalculator(int principal, float annualInterest, short years) {
@@ -18,9 +18,9 @@ public class MortgageCalculator {
     public double calculatePaymentSchedule(short numberOfPaymentMade) {
         float monthlyInterestRate = getMonthlyInterestRate();
         int numberOfPayments = getNumberOfPayments();
-
         return principal * (Math.pow(1 + monthlyInterestRate, numberOfPayments) - Math.pow(1 + monthlyInterestRate, numberOfPaymentMade)) / (Math.pow(1 + monthlyInterestRate, numberOfPayments) - 1);
     }
+
 
     private int getNumberOfPayments() {
         return MONTHS_IN_YEAR * years;
@@ -39,4 +39,16 @@ public class MortgageCalculator {
     public short getYears() {
         return years;
     }
+
+    public double[] getRemainingBalance() {
+        double[] balances = new double[getNumberOfPayments()];
+        for (short month = 1; month <= balances.length; month++) {
+            calculatePaymentSchedule(month);
+            balances[month - 1] = calculatePaymentSchedule(month);
+            System.out.println(month - 1);
+        }
+        return balances;
+    }
+
+
 }
