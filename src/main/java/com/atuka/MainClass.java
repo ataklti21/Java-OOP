@@ -5,7 +5,7 @@ public class MainClass {
         var textBox1 = new TextBox();
         textBox1.setText("Box 1");
         textBox1.setText("Value reflected to the textBox1 object");
-        System.out.println(textBox1.text.toUpperCase());
+        System.out.println(textBox1.getText().toUpperCase());
 
         //Procedural oriented example
         int basicSalary = 50_000;
