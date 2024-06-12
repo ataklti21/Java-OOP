@@ -1,5 +1,9 @@
 package com.atuka.InterfacePractice;
 
+import com.atuka.exceptions.ExceptionDemo;
+
+import java.io.IOException;
+
 public class MainInterfaceClass {
     public static void main(String[] args) {
         //poor man dependency injection
@@ -11,5 +15,10 @@ public class MainInterfaceClass {
         var report2019 = new TaxReport();
         report2019.show(taxCalculator2019);
         report2019.show(20);
+        try {
+            ExceptionDemo.deposit(0.1F);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

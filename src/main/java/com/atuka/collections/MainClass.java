@@ -1,4 +1,4 @@
-package com.atuka;
+package com.atuka.collections;
 
 public class MainClass {
     public static void main(String[] args) {

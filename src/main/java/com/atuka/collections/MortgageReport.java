@@ -1,4 +1,4 @@
-package com.atuka;
+package com.atuka.collections;
 
 import java.text.NumberFormat;
 

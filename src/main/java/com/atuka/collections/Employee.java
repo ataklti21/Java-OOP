@@ -1,4 +1,4 @@
-package com.atuka;
+package com.atuka.collections;
 
 public record Employee(int basicSalary, int hourlyRate) {
     public static int numberOfEmployee;

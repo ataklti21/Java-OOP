@@ -1,4 +1,4 @@
-package com.atuka;
+package com.atuka.collections;
 
 public class MortgageCalculator {
     private final static int MONTHS_IN_YEAR = 12;
